@@ -71,7 +71,9 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Static HTML export with Nuxt
-        run: NUXT_APP_BASE_URL=/blog/ yarn nuxi generate
+        run: yarn nuxi generate
+        env:
+          NUXT_APP_BASE_URL: /blog/ 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
