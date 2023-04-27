@@ -6,12 +6,30 @@ const route = useRoute()
 const props = defineProps<{
     language: string
 }>()
+const { data: article } = await useAsyncData('article', async () => {
+    const article = await queryContent(route.path).findOne()
 
-const { data: article } = await useAsyncData('article', () => queryContent(route.path).findOne())
+    window['disqus_config'] = function () {
+        this.language = props.language
+        this.page.identifier = article.id
+    }
+
+    useHead({
+        script: [
+            {
+                src: 'https://magnomachado-pt.disqus.com/embed.js',
+                'data-timestamp': new Date().toString()
+            }
+        ]
+    })
+
+    return article
+})
 
 </script>
 
 <template>
+    article: {{ article }}
     <article v-if="article" class="flex flex-col shadow my-4">
         <!-- Article Image -->
         <NuxtLink :href="article._path" class="hover:opacity-75">
@@ -27,5 +45,7 @@ const { data: article } = await useAsyncData('article', () => queryContent(route
                 <ContentRenderer :value="article" />
             </NuxtLink>
         </div>
+
+        <div id="disqus_thread" class="m-4"></div>
     </article>
 </template>
