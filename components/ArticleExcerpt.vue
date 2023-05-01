@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import IconArrowRight from '~icons/fa-solid/arrow-right'
 import { ParsedContent } from '@nuxt/content/dist/runtime/types';
 
 const props = defineProps<{
@@ -22,6 +23,6 @@ const props = defineProps<{
             <NuxtLink :href="article._path" class="pb-6">
                 <ContentRenderer :value="article" excerpt />
             </NuxtLink>
-        <NuxtLink :href="article._path" class="uppercase text-gray-800 hover:text-black">{{ props.language == 'pt'?'Continuar lendo':'Continue reading' }}<i class="fas fa-arrow-right"></i></NuxtLink>
+        <NuxtLink :href="article._path" class="uppercase text-gray-800 hover:text-black">{{ props.language == 'pt'?'Continuar lendo':'Continue reading' }} <IconArrowRight class="inline"/></NuxtLink>
     </div>
 </article></template>

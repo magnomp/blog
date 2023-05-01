@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import IconInstagram from '~icons/fa-brands/instagram'
+import IconGithub from '~icons/fa-brands/github'
+import IconLinkedin from '~icons/fa-brands/linkedin'
+import IconChevronUp from '~icons/fa-solid/chevron-up'
+import IconChevronDown from '~icons/fa-solid/chevron-down'
 
 interface Category {
   folder: string
@@ -52,13 +57,13 @@ const mode = computed(() => {
 
       <div class="flex items-center text-lg no-underline text-white pr-6">
         <a class="pl-6" href="https://instagram.com/magnomp">
-          <font-awesome-icon :icon="['fab', 'instagram']" />
+          <IconInstagram/>
         </a>
         <a class="pl-6" href="https://github.com/magnomp">
-          <font-awesome-icon :icon="['fab', 'github']" />
+          <IconGithub/>
         </a>
         <a class="pl-6" href="https://www.linkedin.com/in/magno-machado-b5557110/">
-          <font-awesome-icon :icon="['fab', 'linkedin']" />
+          <IconLinkedin/>
         </a>
       </div>
     </div>
@@ -82,7 +87,8 @@ const mode = computed(() => {
     <div class="block sm:hidden">
       <a href="#" class="block md:hidden text-base font-bold uppercase text-center flex justify-center items-center"
         @click="isOpen = !isOpen">
-        Topics <font-awesome-icon :icon="['fas', isOpen ? 'chevron-down' : 'chevron-up']" />
+        <IconChevronUp v-if="isOpen"/>
+        <IconChevronDown v-else/>
       </a>
     </div>
     <div :class="isOpen ? 'block' : 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
@@ -148,7 +154,7 @@ const mode = computed(() => {
         </div>
         <a href="#"
           class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">
-        <i class="fab fa-instagram mr-2"></i> Follow @dgrzyb
+          <IconInstagram class="mr-2" /> Follow!! @dgrzyb
       </a>
     </div>
 
