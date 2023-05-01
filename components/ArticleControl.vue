@@ -12,8 +12,6 @@ const { data: article, pending, refresh } = await useAsyncData('article', () => 
 </script>
 
 <template>
-    <button @click.prevent="refresh">Refresh</button>
-    
     <article v-if="article" class="flex flex-col shadow my-4">
         <!-- Article Image -->
         <NuxtLink :href="article._path" class="hover:opacity-75">
