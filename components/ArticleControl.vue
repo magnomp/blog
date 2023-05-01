@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ParsedContent } from '@nuxt/content/dist/runtime/types';
 import DisqusComments from './DisqusComments.vue';
 
 const route = useRoute()
