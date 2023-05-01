@@ -1,35 +1,19 @@
 <script setup lang="ts">
 import { ParsedContent } from '@nuxt/content/dist/runtime/types';
+import DisqusComments from './DisqusComments.vue';
 
 const route = useRoute()
 
 const props = defineProps<{
     language: string
 }>()
-const { data: article } = await useAsyncData('article', async () => {
-    const article = await queryContent(route.path).findOne()
-
-    window['disqus_config'] = function () {
-        this.language = props.language
-        this.page.identifier = article.id
-    }
-
-    useHead({
-        script: [
-            {
-                src: 'https://magnomachado-pt.disqus.com/embed.js',
-                'data-timestamp': new Date().toString()
-            }
-        ]
-    })
-
-    return article
-})
+const { data: article, pending, refresh } = await useAsyncData('article', () => queryContent(route.path).findOne())
 
 </script>
 
 <template>
-    article: {{ article }}
+    <button @click.prevent="refresh">Refresh</button>
+    
     <article v-if="article" class="flex flex-col shadow my-4">
         <!-- Article Image -->
         <NuxtLink :href="article._path" class="hover:opacity-75">
@@ -46,6 +30,6 @@ const { data: article } = await useAsyncData('article', async () => {
             </NuxtLink>
         </div>
 
-        <div id="disqus_thread" class="m-4"></div>
+        <DisqusComments :language="props.language" :disqus-id="article.id"/>
     </article>
 </template>
