@@ -9,6 +9,6 @@ const props = defineProps<{
 <template>
     <p class="text-sm pb-3">
         {{ props.language=='pt'?'Por':'By' }} <span class="font-semibold hover:text-gray-800">{{ props.author }}</span>, {{ props.language == 'pt'?'em':'on' }} {{ new
-            Date(publishedDate).toLocaleString() }}
+            Date(publishedDate).toLocaleString(language) }}
     </p>
 </template>
