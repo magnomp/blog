@@ -2,6 +2,8 @@
 import IconInstagram from '~icons/fa-brands/instagram'
 import IconGithub from '~icons/fa-brands/github'
 import IconLinkedin from '~icons/fa-brands/linkedin'
+import IconBrFlag from '~icons/flag/br-4x3'
+import IconUsFlag from '~icons/flag/us-4x3'
 
 const { params } = useRoute()
 
@@ -42,8 +44,9 @@ const mode = computed(() => {
 
       <nav>
         <ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
-          <li><a class="hover:text-gray-200 hover:underline px-4" href="#">Shop</a></li>
-          <li><a class="hover:text-gray-200 hover:underline px-4" href="#">About</a></li>
+          <li class="px-4">Curriculum vitæ</li>
+          <li><a class="hover:text-gray-200 hover:underline px-4" href="https://drive.google.com/file/d/114uZQhtTEJFXMB7Sws852G8PA7cNrH4R/view?usp=sharing"><IconBrFlag/></a></li>
+          <li><a class="hover:text-gray-200 hover:underline px-4" href="https://drive.google.com/file/d/1dJPCjS_CQBiW23dJtdOs7P7Zv445MuTI/view?usp=sharing"><IconUsFlag/></a></li>
         </ul>
       </nav>
 
