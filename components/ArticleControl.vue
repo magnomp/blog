@@ -6,7 +6,7 @@ const route = useRoute()
 const props = defineProps<{
     language: string
 }>()
-const { data: article, pending, refresh } = await useAsyncData('article', () => queryContent(route.path).findOne())
+const { data: article } = await useAsyncData('article', () => queryContent(route.path).findOne())
 
 </script>
 
