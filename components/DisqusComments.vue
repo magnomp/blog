@@ -1,13 +1,14 @@
 <script setup lang="ts">
 const props = defineProps<{
     language: string,
-    disqusId: string
+    disqusId: number
 }>()
 
 onMounted(() => {
     window['disqus_config'] = function () {
         this.language = props.language
-        this.page.identifier = props.disqusId
+        this.page.identifier = `${props.disqusId}_${process.env.NODE_ENV}`
+        console.log(this.page)
     }
 
     useHead({
