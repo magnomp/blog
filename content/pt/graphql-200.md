@@ -1,6 +1,6 @@
 ---
 timestamp: 2023-05-14T22:41:29-3:00
-title: Socorro, meu endpoint GraphQL só retorna 200
+title: "Deu certo, só que não: Porque meu endpoint GraphQL só retorna 200?"
 id: 20230514224129
 tags:
     - graphql
