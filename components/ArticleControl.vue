@@ -22,9 +22,7 @@ const { data: article } = await useAsyncData('article', () => queryContent(route
             <NuxtLink :href="article._path" class="text-3xl font-bold hover:text-gray-700 pb-4">{{ article.title }}
             </NuxtLink>
             <ArticleAuthorship :language="props.language" author="Magno Machado" :published-date="article['timestamp']" />
-            <NuxtLink :href="article._path" class="pb-6">
-                <ContentRenderer :value="article" />
-            </NuxtLink>
+            <ContentRenderer :value="article" />
         </div>
 
         <DisqusComments :language="props.language" :disqus-id="article.id"/>
