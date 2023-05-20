@@ -13,7 +13,7 @@ useHead({
   },
   script: [
     {
-      src: "https://www.googletagmanager.com/gtag/js?id=G-FN9K81LXY4",
+      src: "https://www.googletagmanager.com/gtag/js?id=G-PNDM29D5DP",
       async: true
     }
   ]
@@ -24,7 +24,7 @@ onMounted(() => {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-FN9K81LXY4');
+  gtag('config', 'G-PNDM29D5DP');
 })
 
 const slugs = computed(() => {
