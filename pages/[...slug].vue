@@ -10,7 +10,21 @@ const language = computed(() => params.slug?.length == 0 ? "pt" : params.slug[0]
 useHead({
   htmlAttrs: {
     lang: language
-  }
+  },
+  script: [
+    {
+      src: "https://www.googletagmanager.com/gtag/js?id=G-FN9K81LXY4",
+      async: true
+    }
+  ]
+})
+
+onMounted(() => {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FN9K81LXY4');
 })
 
 const slugs = computed(() => {
