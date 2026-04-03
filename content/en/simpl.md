@@ -140,7 +140,7 @@ There will be scenarios out there for which you would think whether `404` is the
 
 The point here is: We don't want the ambiguity of returning `404` on simple cases and `422` on others, because how do we define the limits? Ambiguities and discussions is precisely what we want to avoid here, and since `404` isn't a good fit for so many cases (for reasons already discussed), let's drop it.
 
-I propose an exercise: For an api consumer, what benefit would `404` add over `422` for the api consumer, given that this api consumer is dependent on proper error details embedded on the response body anyway?
+I propose an exercise: For an api consumer, what benefit would `404` add over `422`, given that this the consumer is already dependent on proper error details embedded on the response body anyway?
 
 ### Do not use DELETE verb to remove stuff
 
@@ -166,7 +166,7 @@ Over the years there were a few standards on doing RPC over HTTP, using it just 
 
 In `SIMPL`, HTTP is indeed just a transport, but we are still close to it and any `SIMPL` request is really close to how HTTP was intended to be used (besides our specific choices for verbs, codes, etc).
 
-# Out of scope: Response body
+## Out of scope: Response body
 
 We haven't discussed specific body shapes for things like errors and pagination. Though those are relevant topics and deserve to be standardized to some degree, they are simply outside `SIMPL`'s scope. So, just do whatever fits better for your needs.
 
