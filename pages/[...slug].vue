@@ -20,6 +20,12 @@ useHead({
   ]
 })
 
+useSeoMeta({
+  ogSiteName: 'Magno Machado',
+  ogTitle: 'Magno Machado',
+  ogType: 'website',
+})
+
 onMounted(() => {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}

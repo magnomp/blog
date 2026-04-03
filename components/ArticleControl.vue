@@ -8,9 +8,18 @@ const props = defineProps<{
 }>()
 const { data: article } = await useAsyncData('article', () => queryContent(route.path).findOne())
 
-useHead(computed(() => ({
-  title: article.value?.title ? `${article.value.title} - Magno Machado` : 'Magno Machado'
-})))
+useHead(() => ({
+  title: article.value?.title ? `${article.value.title} - Magno Machado` : 'Magno Machado',
+}))
+
+useSeoMeta(() => ({
+  ogTitle: article.value?.title ? `${article.value.title} - Magno Machado` : 'Magno Machado',
+  ogType: 'article',
+  ogImage: article.value?.id ? `/${article.value.id}.png` : undefined,
+  ogDescription: article.value?.description ?? undefined,
+  articlePublishedTime: article.value?.timestamp,
+  articleTag: article.value?.tags,
+}))
 
 </script>
 
