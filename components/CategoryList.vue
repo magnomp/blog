@@ -9,7 +9,7 @@ const props = defineProps<{
 const { data: documents } = await useAsyncData('tags', () => queryContent(`/${props.language}`).only('tags').find())
 
 const categories = computed(() =>
-    documents.value?.map(d => d.tags?.at(0))
+    documents.value?.flatMap(d => d.tags)
 )
 
 const isOpen = ref(false)

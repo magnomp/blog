@@ -5,7 +5,7 @@ import IconLinkedin from '~icons/fa-brands/linkedin'
 
 const { params } = useRoute()
 
-const language = computed(() => params.slug?.length == 0 ? "pt" : params.slug[0].toLowerCase())
+const language = "en"
 
 useHead({
   htmlAttrs: {
@@ -59,7 +59,7 @@ const mode = computed(() => {
         <a class="pl-6" href="https://github.com/magnomp">
           <IconGithub/>
         </a>
-        <a class="pl-6" href="https://www.linkedin.com/in/magno-machado-b5557110/">
+        <a class="pl-6" href="https://www.linkedin.com/in/magno-machado/">
           <IconLinkedin/>
         </a>
       </div>
@@ -74,7 +74,7 @@ const mode = computed(() => {
         Magno Machado Paulo
       </a>
       <p class="text-lg text-gray-600">
-        Uma vela nada perde quando acende outra
+        Coding and thinking
       </p>
     </div>
   </header>
@@ -110,34 +110,14 @@ const mode = computed(() => {
     <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
 
       <div class="w-full bg-white shadow flex flex-col my-4 p-6">
-        <p class="text-xl font-semibold pb-5">{{ language == 'pt'?'Sobre mim':'About me' }}</p>
-        <p class="pb-2">Desenvolvendo profissionalmente desde 2004, e por hobby há mais alguns anos :) Do desktop ao
-          cloud, passando pelo embedded sempre apreciando a troca de conhecimento. Aqui é onde exponho minhas divagações e
-          espero aprender mais.</p>
-        <a :href="language == 'pt'?'/en/':'/pt/'"
-          class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
-          {{ language == 'pt'?'Check my english blog':'Veja meu blog em português' }}
-        </a>
+        <p class="text-xl font-semibold pb-5">About me</p>
+        <p class="pb-2">10+ years of solving problems with software engineering</p>
+        <img src="/magno.jpg">
       </div>
 
       <div class="w-full bg-white shadow flex flex-col my-4 p-6">
-        <p class="text-xl font-semibold pb-5">Instagram</p>
-        <div class="grid grid-cols-3 gap-3">
-          <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=1">
-          <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=2">
-          <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=3">
-          <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=4">
-          <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=5">
-          <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=6">
-          <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=7">
-          <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8">
-          <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9">
-        </div>
-        <a href="#"
-          class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">
-          <IconInstagram class="mr-2" /> Follow!! @dgrzyb
-      </a>
-    </div>
+        <p class="pb-2">Template by <a href="https://github.com/davidgrzyb/" target="_blank">davidgrzyb</a></p>
+      </div>      
 
   </aside>
 
