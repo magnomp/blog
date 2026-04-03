@@ -1,5 +1,10 @@
+* {
+    font-family: Georgia, serif;
+}
+
 article p {
-    @apply p-4
+    @apply p-4;
+    font-size: 1.1rem;
 }
 
 article pre {

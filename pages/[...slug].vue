@@ -82,10 +82,10 @@ const mode = computed(() => {
   <CategoryList :language="language"/>
 
 
-  <div class="container mx-auto flex flex-wrap py-6">
+  <div class="container mx-auto flex flex-col md:flex-row py-6">
 
     <!-- Posts Section -->
-    <section class="w-full md:w-2/3 flex flex-col items-center px-3">
+    <section class="flex-[2] flex flex-col items-center px-3">
 
       <ArticleList v-if="mode == 'index'" :query="{ path: language }" :language="language" />
       <ArticleList v-else-if="mode == 'tag_index'"
@@ -107,7 +107,7 @@ const mode = computed(() => {
     </section>
 
     <!-- Sidebar Section -->
-    <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
+    <aside class="flex-[1] flex flex-col items-center px-3">
 
       <div class="w-full bg-white shadow flex flex-col my-4 p-6">
         <p class="text-xl font-semibold pb-5">About me</p>
