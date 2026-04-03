@@ -8,6 +8,10 @@ const props = defineProps<{
 }>()
 const { data: article } = await useAsyncData('article', () => queryContent(route.path).findOne())
 
+useHead(computed(() => ({
+  title: article.value?.title ? `${article.value.title} - Magno Machado` : 'Magno Machado'
+})))
+
 </script>
 
 <template>

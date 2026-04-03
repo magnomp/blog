@@ -11,6 +11,7 @@ useHead({
   htmlAttrs: {
     lang: language
   },
+  title: 'Magno Machado',
   script: [
     {
       src: "https://www.googletagmanager.com/gtag/js?id=G-PNDM29D5DP",
